@@ -1,6 +1,6 @@
 # DnDice RPG Roller
 
-**DnDice RPG Roller** to aplikacja mobilna stworzona w Flutterze, która umożliwia szybkie i wygodne rzucanie kośćmi RPG (m.in. d4, d6, d8, d10, d12, d20, d100) zarówno w trybie gracza, jak i mistrza gry.
+**DnDice RPG Roller** to aplikacja mobilna stworzona w Flutterze, która umożliwia szybkie i wygodne rzucanie kośćmi RPG (m.in. d4, d6, d8, d10, d12, d20, d100)
 
 ---
 
