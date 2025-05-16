@@ -6,7 +6,11 @@
 
 ## 📸 Screenshoty
 
-*(dodaj tutaj zrzuty ekranu aplikacji – np. ekran główny, widok rzutów, tryb GM)*
+### Ekran główny (Home Page)
+![Home Page](assets/screenshots/home_page.png)
+
+### Ekran rzutu kością (Roll Dice Page)
+![Roll Dice Page](assets/screenshots/roll_dice_page.png)
 
 ---
 
