@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.4.1
+  lottie: ^2.6.0
 
   cupertino_icons: ^1.0.8
 
@@ -26,12 +28,18 @@ flutter_icons:
 flutter:
   uses-material-design: true
   assets:
-    - assets/backgrounds/wood.jpg
-    - assets/backgrounds/scroll.png
+    - assets/backgrounds/fullbackground.png
     - assets/icons/feather_hand.png
     - assets/icons/back_hand.png
     - assets/icons/
+    - assets/logo/splash_logo.png
+    - assets/animations/d20_roll.json
   fonts:
     - family: MedievalSharp
       fonts:
         - asset: assets/fonts/MedievalSharp-Regular.ttf
+
+flutter_native_splash:
+  color: "#000000"
+  android_12:
+    color: "#000000"

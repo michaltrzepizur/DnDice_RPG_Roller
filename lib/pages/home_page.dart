@@ -21,23 +21,13 @@ class HomePage extends StatelessWidget {
         children: [
           // Tło
           Image.asset(
-            'assets/backgrounds/wood.jpg',
+            'assets/backgrounds/fullbackground.png',
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
           ),
 
-          // Zwój
-          SizedBox(
-            width: 450,
-            height: 750,
-            child: Image.asset(
-              'assets/backgrounds/scroll.png',
-              fit: BoxFit.fill,
-            ),
-          ),
-
-          // Zawartość zwoju
+          // Zawartość ekranu
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
