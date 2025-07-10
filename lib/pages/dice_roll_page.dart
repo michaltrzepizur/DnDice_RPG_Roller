@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
 
 class DiceRollPage extends StatefulWidget {
   final String diceType;
@@ -112,7 +113,7 @@ class _DiceRollPageState extends State<DiceRollPage> {
 
                 // 🎲 Ikona kostki
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     int count = int.tryParse(_rollCountController.text) ?? 1;
                     if (count > 20) {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -127,6 +128,10 @@ class _DiceRollPageState extends State<DiceRollPage> {
                       rollResults = rollDice(count);
                       totalResult = rollResults.reduce((a, b) => a + b);
                     });
+                    // ✅ Wibracja po rzucie
+                    if (await Vibration.hasVibrator() ?? false) {
+                    Vibration.vibrate(duration: 100);
+                   }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
