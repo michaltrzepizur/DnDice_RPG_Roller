@@ -73,16 +73,6 @@ class _DiceRollPageState extends State<DiceRollPage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 30),
-                const Text(
-                  'Wybierz swoje przeznaczenie!',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                    color: Color.fromARGB(255, 4, 4, 4),
-                  ),
-                ),
 
                 const SizedBox(height: 30),
                 const Text(

@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const SizedBox(height: 32), // 🔼 Podniesiony tytuł
+              const SizedBox(height: 10), // 🔼 Podniesiony tytuł
 
               // 🧾 Tytuł aplikacji
               const Text(
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 60), // 🔼 mniej odstępu
+              const SizedBox(height: 26), // 🔼 mniej odstępu
 
               // 🎲 Ikony kości
               SizedBox(
@@ -102,7 +102,7 @@ class HomePage extends StatelessWidget {
                 label: const Text(
                   'Historia rzutów',
                   style: TextStyle(
-                    fontSize: 16, // <- tu ustawiasz rozmiar czcionki
+                    fontSize: 16, // rozmiar czcionki
                     //fontWeight: FontWeight.bold, // opcjonalnie: pogrubienie
                   ),
                 ),

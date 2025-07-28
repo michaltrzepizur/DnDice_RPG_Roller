@@ -3,11 +3,17 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:lottie/lottie.dart';
 import 'pages/history_page.dart';
 import 'pages/home_page.dart';
+import 'package:flutter/services.dart';
 
 Future<void> main() async {
   // 1) Zatrzymujemy pierwszą klatkę – zostaje natywny splash
   final binding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: binding);
+
+  // ✅ Wymuszenie pionowej orientacji
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
 
   // 🟡 Preloaduj cięższe grafiki, żeby uniknąć ich "doklejania" na HomePage
   await _warmUp(binding);
