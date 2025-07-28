@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
       body: Stack(
         alignment: Alignment.center,
         children: [
-          // Tło
+          // 🔳 Tło
           Image.asset(
             'assets/backgrounds/fullbackground.png',
             fit: BoxFit.cover,
@@ -27,13 +27,13 @@ class HomePage extends StatelessWidget {
             height: double.infinity,
           ),
 
-          // Zawartość ekranu
+          // 📜 Zwój – zawartość wewnętrzna
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const SizedBox(height: 12),
+              const SizedBox(height: 32), // 🔼 Podniesiony tytuł
 
-              // Tytuł aplikacji
+              // 🧾 Tytuł aplikacji
               const Text(
                 'DnDice RPG Roller',
                 style: TextStyle(
@@ -44,11 +44,11 @@ class HomePage extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 110),
+              const SizedBox(height: 60), // 🔼 mniej odstępu
 
-              // Ikony kości
+              // 🎲 Ikony kości
               SizedBox(
-                width: 270, // lub 280–290 – tyle, ile ma Twój zwój
+                width: 270,
                 child: Wrap(
                   alignment: WrapAlignment.center,
                   spacing: 30,
@@ -75,15 +75,40 @@ class HomePage extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 80),
+              const SizedBox(height: 40),
 
-              // Podpis pod ikonami
+              // ✏️ Podpis pod ikonami
               const Text(
                 'Wybierz kość',
                 style: TextStyle(
                   fontSize: 26,
                   fontFamily: 'MedievalSharp',
                   color: Colors.black87,
+                ),
+              ),
+
+              const SizedBox(height: 30),
+
+              // 🕰️ Przycisk Historia – przeniesiony wyżej
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/history');
+                },
+                icon: Image.asset(
+                  'assets/icons/history_icon_1.png',
+                  width: 30, // dostosuj rozmiar wedle potrzeb
+                  height: 30,
+                ),
+                label: const Text(
+                  'Historia rzutów',
+                  style: TextStyle(
+                    fontSize: 16, // <- tu ustawiasz rozmiar czcionki
+                    //fontWeight: FontWeight.bold, // opcjonalnie: pogrubienie
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(221, 255, 255, 255),
+                  foregroundColor: const Color.fromARGB(255, 0, 0, 0),
                 ),
               ),
             ],

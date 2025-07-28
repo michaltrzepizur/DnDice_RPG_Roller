@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:vibration/vibration.dart';
+import 'package:dndice/utils/roll_history.dart';
 
 class DiceRollPage extends StatefulWidget {
   final String diceType;
@@ -46,15 +47,40 @@ class _DiceRollPageState extends State<DiceRollPage> {
                 const EdgeInsets.symmetric(horizontal: 24.0, vertical: 130),
             child: Column(
               children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: IconButton(
-                    onPressed: () => Navigator.pop(context),
-                    icon: Image.asset(
-                      'assets/icons/back_hand.png',
-                      width: 90,
-                      height: 60,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // 🔙 Lewy przycisk – powrót
+                    IconButton(
+                      onPressed: () => Navigator.pop(context),
+                      icon: Image.asset(
+                        'assets/icons/back_hand.png',
+                        width: 90,
+                        height: 60,
+                      ),
                     ),
+
+                    // 📜 Prawy przycisk – historia
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/history');
+                      },
+                      icon: Image.asset(
+                        'assets/icons/history_icon_1.png', // twoja ikona historii
+                        width: 90,
+                        height: 50,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 30),
+                const Text(
+                  'Wybierz swoje przeznaczenie!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    color: Color.fromARGB(255, 4, 4, 4),
                   ),
                 ),
 
@@ -127,11 +153,12 @@ class _DiceRollPageState extends State<DiceRollPage> {
                     setState(() {
                       rollResults = rollDice(count);
                       totalResult = rollResults.reduce((a, b) => a + b);
+                      RollHistory.add(widget.diceType, rollResults);
                     });
                     // ✅ Wibracja po rzucie
                     if (await Vibration.hasVibrator() ?? false) {
-                    Vibration.vibrate(duration: 100);
-                   }
+                      Vibration.vibrate(duration: 100);
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -150,7 +177,7 @@ class _DiceRollPageState extends State<DiceRollPage> {
                 if (rollResults.isNotEmpty) ...[
                   const SizedBox(height: 15),
                   SizedBox(
-                    height: 100,
+                    height: 60,
                     child: SingleChildScrollView(
                       child: SizedBox(
                         width: 250,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:lottie/lottie.dart';
-
+import 'pages/history_page.dart';
 import 'pages/home_page.dart';
 
 Future<void> main() async {
@@ -34,14 +34,15 @@ class DnDiceApp extends StatelessWidget {
         home: const SplashPage(), // zob. poniżej
         routes: {
           '/home': (_) => const HomePage(),
+          '/history': (_) => const HistoryPage(),
         },
       );
 }
 
 /// 🟡 Pre‑cache grafik (tło + ikony kostek)
 Future<void> _warmUp(WidgetsBinding binding) async {
-  final ctx = binding.rootElement;     // zamiennik renderViewElement
-  if (ctx == null) return;             // bezpieczeństwo
+  final ctx = binding.rootElement; // zamiennik renderViewElement
+  if (ctx == null) return; // bezpieczeństwo
 
   // 1️⃣ JEDNA lista ze wszystkimi ścieżkami plików, których będziemy używać
   const assets = [
