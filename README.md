@@ -7,7 +7,7 @@
 ## 📸 Screenshoty
 
 ### Ekran główny (Home Page)
-![Home Page](assets/screenshots/Home_page.png)
+![Home Page](assets/screenshots/home_page.png)
 
 ### Ekran rzutu kością (Roll Dice Page)
 ![Roll Dice Page](assets/screenshots/Roll_page.png)
