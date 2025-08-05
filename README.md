@@ -7,11 +7,13 @@
 ## 📸 Screenshoty
 
 ### Ekran główny (Home Page)
-![Home Page](assets/screenshots/home_page.png)
+![Home Page](assets/screenshots/Home_page.png)
 
 ### Ekran rzutu kością (Roll Dice Page)
-![Roll Dice Page](assets/screenshots/roll_dice_page.png)
+![Roll Dice Page](assets/screenshots/Roll_page.png)
 
+### Ekran historii rzutów (Roll History Page)
+![Roll History Page](assets/screenshots/History_page.png)
 ---
 
 ## 🔧 Funkcje
